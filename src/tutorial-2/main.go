@@ -12,6 +12,11 @@ func main() {
 	var cost2 float64 = 12.89788888888; // more accurate
 	// var cost2 double = 12.89788888888; // double do not exists
 
+
+
 	fmt.Println("Hello Prashant is ", age, points);
-	fmt.Println(cost1, cost2);
+	fmt.Println("Costs are", cost1, cost2);
+	// fmt.Println("Sum of costs", cost1 + cost2); // type mismatch prevents mathematical operation
+	fmt.Println("Sum of costs", float64(cost1) + cost2); // up type casting
+	fmt.Println("Sum of costs", float32(cost2) + cost1); // down type casting
 }
