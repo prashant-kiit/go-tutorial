@@ -46,5 +46,9 @@ func main() {
 	// fmt.Println(byte(myBoolean)); // this type casting is not allowed
 
 	var something string // not null
-	fmt.Println("Auto initalized string variable", something);
+	fmt.Println("Auto initalized string variable", something)
+
+	const version int = 10
+	// version = 20;
+	fmt.Println("This is constant variable", version)
 }
