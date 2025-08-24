@@ -38,12 +38,20 @@ func main() {
 	fmt.Println("Size of A in rune", unsafe.Sizeof(myRune))
 	fmt.Println("A in byte", myByte)
 	fmt.Println("Size of A in rune", unsafe.Sizeof(myByte))
+	// 	Key Difference from rune
+	// byte = alias for uint8 → 1 byte → best for ASCII.
+	// rune = alias for int32 → 4 bytes → represents a Unicode code point.
 
 	var myBoolean bool = true
 	fmt.Println(myBoolean)
 	// fmt.Println(int(myBoolean)); // this type casting is not allowed
 	// fmt.Println(rune(myBoolean)); // this type casting is not allowed
 	// fmt.Println(byte(myBoolean)); // this type casting is not allowed
+
+	// wrap-around (overflow) effect
+	var x int = 300
+	var y uint8 = uint8(x) // overflow → wraps to 44
+	fmt.Println(y)
 
 	var something string // not null
 	fmt.Println("Auto initalized string variable", something)
