@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func main() {
+	// array
 	var arr1 [3]int64 // default {0,0,0}
 	fmt.Println(arr1)
 	var arr2 [3]byte // default {0,0,0}
@@ -18,4 +22,26 @@ func main() {
 	fmt.Println(arr6)
 	fmt.Println(arr6[2])
 	fmt.Println(arr6[0:1]) // subarray {1}
+
+	// slice
+	var slice1 []int64 = []int64{1, 2, 5, 4, 3} // default {1, 2, 5, 4, 3}
+	fmt.Println(slice1)
+	fmt.Println(slice1[3])
+	fmt.Println(slice1[3:5])
+
+	slices.Sort(slice1)
+	slices.Reverse(slice1)
+	fmt.Println(slice1)
+
+	slice1 = append(slice1, 10)
+	fmt.Println(slice1)
+	fmt.Println(len(slice1))
+	fmt.Println(cap(slice1))
+	slice1 = append(slice1, slice1...)
+	fmt.Println(slice1)
+
+	var slice2 []int64 = make([]int64, 3, 5)
+	fmt.Println((slice2))
+	// fmt.Println((slice2[4])) // index of bound error
+
 }
