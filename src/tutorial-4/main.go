@@ -17,4 +17,5 @@ func main() {
 	var arr6 [3]int64 = [3]int64{1, 2} // default {1,2,0}
 	fmt.Println(arr6)
 	fmt.Println(arr6[2])
+	fmt.Println(arr6[0:1]) // subarray {1}
 }
