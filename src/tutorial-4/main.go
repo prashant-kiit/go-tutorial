@@ -11,6 +11,10 @@ func main() {
 	fmt.Println(arr3)
 	var arr4 [3]bool // default {0,0,0}
 	fmt.Println(arr4)
-	var arr5 [3]string // default {'','',''}
+	var arr5 [3]string     // default {'','',''}
 	fmt.Println(len(arr5)) // 3
+
+	var arr6 [3]int64 = [3]int64{1, 2} // default {1,2,0}
+	fmt.Println(arr6)
+	fmt.Println(arr6[2])
 }
