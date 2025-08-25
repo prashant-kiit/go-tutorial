@@ -44,4 +44,21 @@ func main() {
 	fmt.Println((slice2))
 	// fmt.Println((slice2[4])) // index of bound error
 
+	// map
+	var table1 map[string]int64
+	fmt.Println(table1)
+	fmt.Println(len(table1)) // no key so 0
+
+	var table2 map[string]int64 = map[string]int64{"abc": 100, "pqr": -10}
+	table2["xyz"] = 300
+	fmt.Println(table2)
+	table2["abc"] = 200
+	fmt.Println(table2["abc"]) // 100
+	fmt.Println(table2["ac"]) // defaulted to 0 (b/c value is int64)
+	fmt.Println(len(table2)) // 2 keys so 2
+	// fmt.Println(cap(table2)) // no capacity method for map
+
+	var value, isPresent = table2["lmn"]
+	fmt.Println(value, isPresent)
+
 }
