@@ -54,14 +54,40 @@ func main() {
 	fmt.Println(table2)
 	table2["abc"] = 200
 	fmt.Println(table2["abc"]) // 100
-	fmt.Println(table2["ac"]) // defaulted to 0 (b/c value is int64)
-	fmt.Println(len(table2)) // 2 keys so 2
+	fmt.Println(table2["ac"])  // defaulted to 0 (b/c value is int64)
+	fmt.Println(len(table2))   // 2 keys so 2
 	// fmt.Println(cap(table2)) // no capacity method for map
 
 	var value, isPresent = table2["lmn"]
 	fmt.Println(value, isPresent)
 
-	delete(table2, "abc");
+	delete(table2, "abc")
 	fmt.Println(table2)
+
+	// loop
+	for x := range table2 {
+		fmt.Println(x)
+	}
+
+	for i, v := range slice1 {
+		fmt.Println(i, v)
+	}
+
+	for i := 0; i < 10; i += 2 {
+		fmt.Println(i)
+	}
+
+	for i := range 10 {
+		fmt.Println(i)
+	}
+
+	i := 0
+	for i < 10 {
+		if i == 5 {
+			break
+		}
+		fmt.Println(i)
+		i++
+	}
 
 }
