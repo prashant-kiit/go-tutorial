@@ -61,4 +61,7 @@ func main() {
 	var value, isPresent = table2["lmn"]
 	fmt.Println(value, isPresent)
 
+	delete(table2, "abc");
+	fmt.Println(table2)
+
 }
