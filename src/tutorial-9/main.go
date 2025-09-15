@@ -10,7 +10,6 @@ import (
 // accessiblity scope (public & private)
 
 func main() {
-	fmt.Println("Hello, World!")
 	// Create Person (can only set exported fields)
     p := myPkg.Person{Name: "Prashant"} // ✅ OK
 	fmt.Println("Name:", p.Name)
