@@ -6,16 +6,32 @@ import (
 )
 
 func foo1(ch chan int, length int) {
-	for i := range length + 10{ // no blocking
+	for i := range length + 10 { // no blocking
 		ch <- i
 		time.Sleep(300 * time.Millisecond)
 	}
 }
 
 func foo2(ch chan int, length int) {
-	for i := range length + 10{ // no blocking
+	for i := range length + 10 { // no blocking
 		ch <- i
 		time.Sleep(30000 * time.Millisecond)
+	}
+}
+
+func foo3(ch chan int) {
+	for i := 0; i < 5; i++ {
+		ch <- i
+		time.Sleep(300 * time.Millisecond)
+	}
+
+}
+
+func foo4(ch chan int) {
+	defer close(ch)
+	for i := 0; i < 5; i++ {
+		ch <- i
+		time.Sleep(300 * time.Millisecond)
 	}
 }
 
@@ -99,11 +115,32 @@ func exmaple6() {
 	}
 }
 
+func example7() {
+	ch := make(chan int)
+	go foo3(ch)
+	for i := range 5 {
+		fmt.Println(i , <-ch) // two reads here
+	}
+	// for i := range 7 { // locks the code
+	// 	fmt.Println(i , <-ch)
+	// }
+}
+
+func example8() {
+	ch := make(chan int)
+	go foo4(ch)
+	for i := range ch {
+		fmt.Println(i) // single read here
+	}
+}
+
 func main() {
 	// example1()
 	// example2()
 	// example3()
 	// exmaple4()
 	// exmaple5()
-	exmaple6()
+	// exmaple6()
+	// example7()
+	example8()
 }
