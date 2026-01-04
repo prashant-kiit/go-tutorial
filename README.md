@@ -3,6 +3,7 @@
 Resource:
 1. https://www.youtube.com/watch?v=8uiZC0l4Ajw
 2. https://www.youtube.com/watch?v=OGhQhFKvMiM&t=1662s
+3. https://www.geeksforgeeks.org/digital-logic/different-ways-to-represent-signed-integer
 
 To Read:
 1. Server in Go using HTTP/Net
